@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحويل الأموال - إسماعيل حمدان</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f7fa;
+            color: #333;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .main-content {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .header {
+            margin-bottom: 40px;
+        }
+        .header h1 {
+            font-size: 28px;
+            color: #003087;
+            margin: 0;
+        }
+        .header p {
+            font-size: 16px;
+            color: #666;
+            margin: 10px 0 0;
+        }
+
+        .transfer-section {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #e7ecef;
+            margin-bottom: 40px;
+        }
+        .transfer-section h2 {
+            font-size: 22px;
+            color: #0070ba;
+            margin-bottom: 20px;
+        }
+        .transfer-section p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .instructions-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f4f8;
+            border: 1px solid #0070ba;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        .instructions-btn:hover {
+            background-color: #e0e8f0;
+        }
+        .instructions-btn:focus {
+            outline: 2px solid #0070ba;
+        }
+        .instructions-btn i {
+            font-size: 20px;
+            margin-left: 10px;
+            color: #0070ba;
+        }
+        .instructions-btn span {
+            font-size: 18px;
+            font-weight: bold;
+            color: #0070ba;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+        }
+        .footer p {
+            font-size: 14px;
+            color: #666;
+            margin: 0;
+        }
+
+        /* أنماط النافذة المنبثقة */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+        .modal-content {
+            background-color: #fff;
+            width: 90%;
+            max-width: 500px;
+            margin: 100px auto;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: right;
+            position: relative;
+        }
+        .modal-content h3 {
+            font-size: 22px;
+            color: #0070ba;
+            margin-bottom: 20px;
+        }
+        .modal-content ul {
+            list-style-type: decimal;
+            padding-right: 20px;
+            color: #333;
+            font-size: 16px;
+        }
+        .modal-content ul li {
+            margin-bottom: 15px;
+        }
+        .close-btn {
+            background-color: #0070ba;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .close-btn:hover {
+            background-color: #005ea6;
+        }
+
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 22px;
+            }
+            .header p {
+                font-size: 14px;
+            }
+            .transfer-section {
+                padding: 20px;
+            }
+            .transfer-section h2 {
+                font-size: 18px;
+            }
+            .transfer-section p {
+                font-size: 16px;
+            }
+            .footer p {
+                font-size: 12px;
+            }
+            .modal-content {
+                width: 85%;
+                margin: 50px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <div class="header">
+            <h1>تحويل الأموال</h1>
+            <p>قم بإتمام عملية التحويل بسهولة وأمان مع إسماعيل حمدان</p>
+        </div>
+
+        <div class="transfer-section">
+            <!-- زر التعليمات -->
+            <div class="instructions-btn" onclick="openModal()" role="button" tabindex="0">
+                <span>تعليمات</span>
+                <i class="fas fa-info-circle"></i>
+            </div>
+
+            <!-- إضافة زر PayPal -->
+            <div id="paypal-container-H7JJXD84GWMZQ"></div>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 إسماعيل حمدان- خدمات وساطة مالية موثوقة. جميع الحقوق محفوظة.</p>
+        </div>
+    </div>
+
+    <!-- النافذة المنبثقة -->
+    <div id="instructionsModal" class="modal">
+        <div class="modal-content">
+            <h3>تعليمات الدفع</h3>
+            <ul>
+                <li>في حال تأخرت باستلام الحوالة، راسلني عبر واتساب.</li>
+                <li>متوسط مدة استلام الحوالة: ساعتين عمل.</li>
+                <li>ماذا يقصد بـ بيانات استلام الحوالة؟ هي رقم المحفظة أو الاسم المستعار لخدمة كليك أو إيميل الخدمة التي تريد تحويل الحوالة لها.</li>
+                <li>يمكنك الدفع باستخدام PayPal والبطاقات الائتمانية وأي طرق دفع متاحة لك في الصفحة.</li>
+            </ul>
+            <button class="close-btn" onclick="closeModal()">إغلاق</button>
+        </div>
+    </div>
+
+    <!-- السكربت الخاص بالنافذة المنبثقة -->
+    <script>
+        function openModal() {
+            document.getElementById("instructionsModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("instructionsModal").style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            var modal = document.getElementById("instructionsModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+    <!-- إضافة سكربت PayPal -->
+    <script src="https://www.paypal.com/sdk/js?client-id=BAAO1Gb_EHrRKtJxuLnjQRjRM5OcAA7pVzF0OOcP5IBMHXgP57medD0_YE5nAJ60xy5LKQ1sMIjCsuzyAA&components=hosted-buttons&disable-funding=venmo&currency=USD"></script>
+    <script>
+        paypal.HostedButtons({
+            hostedButtonId: "H7JJXD84GWMZQ",
+        }).render("#paypal-container-H7JJXD84GWMZQ");
+    </script>
+</body>
+</html>
